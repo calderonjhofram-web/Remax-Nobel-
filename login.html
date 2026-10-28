@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - REMAX Nobel</title>
+    <link rel="stylesheet" href="remax.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="remax.html" class="logo"><img src="logo.webp" alt="REMAX Nobel"></a>
+        <nav>
+            <ul>
+                <li><a href="#iniciar">Iniciar sesión</a></li>
+                <li><a href="#crear">Crear cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cajas">
+            <form class="caja" id="login">
+                <h2 id="iniciar">Iniciar sesión</h2>
+                <input name="cedula" placeholder="Cédula" required>
+                <input name="correo" type="email" placeholder="Correo electrónico" required>
+                <button>Entrar</button>
+            </form>
+
+            <form class="caja" id="registro">
+                <h2 id="crear">Crear cuenta</h2>
+                <input name="cedula" placeholder="Cédula" required>
+                <input name="nombre" placeholder="Nombre" required>
+                <input name="apellido" placeholder="Apellido" required>
+                <input name="correo" type="email" placeholder="Correo electrónico" required>
+                <button>Registrarme</button>
+            </form>
+        </div>
+        <p id="mensaje"></p>
+    </main>
+
+    <footer>
+        <p><strong>Contactanos</strong></p>
+        <p> Calle 9 entre Carreras 21 y 22, Casa N° 21-16, Barrio Obrero, San Cristóbal, Táchira</p>
+        <p></p> <a href="tel:+582763533794">+58-2763533794</a> ·  <a href="tel:+584147071434">+58-4147071434</a></p>
+        <p><a href="https://wa.me/584147071434" target="_blank">WhatsApp</a> · <a href="mailto:gerencia@nobel.remax.com.ve">gerencia@nobel.remax.com.ve</a></p>
+        <p> <a href="https://instagram.com/remax.nobel.ve" target="_blank">remax.nobel.ve</a></p>
+    </footer>
+</body>
+</html>

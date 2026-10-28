@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REMAX Nobel, oficina REMAX en San Cristóbal, Táchira. Compra, venta y alquiler de propiedades.">
+    <title>REMAX Nobel - San Cristóbal, Táchira</title>
+    <link rel="stylesheet" href="remax.css">
+    <script src="catalogo.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><img src="logo.webp" alt="REMAX Nobel"></a>
+        <input type="search" id="busqueda" placeholder="Buscar inmuebles o agentes...">
+        <nav>
+            <ul id="menu">
+                <li><a href="login.html#iniciar">Iniciar sesión</a></li>
+                <li><a href="login.html#crear">Crear cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="oficina">
+            <div class="oficina-logo">
+                <img src="logo.webp" alt="REMAX Nobel">
+            </div>
+
+            <div class="oficina-info">
+                <div class="oficina-titulo">
+                    <h1>REMAX Nobel</h1>
+                    <a href="https://www.remax.com.ve/nobel" target="_blank"></a>
+                </div>
+                <div class="oficina-datos">
+                    <p>Calle 9 entre Carreras 21 y 22, Casa N° 21-16, Sector Barrio Obrero. San Cristóbal. Estado Táchira. Venezuela.</p>
+                    <p><a href="https://www.google.com/maps/search/?api=1&query=REMAX+Nobel+Barrio+Obrero+San+Cristobal+Tachira" target="_blank">Ver mapa</a></p>
+                    <ul class="contactos">
+                        <li> <a href="tel:+582763533794">+58-2763533794</a></li>
+                        <li> <a href="tel:+584147071434">+58-4147071434</a></li>
+                        <li><a href="https://wa.me/584147071434" target="_blank">+58-4147071434</a></li>
+                        <li> <a href="mailto:gerencia@nobel.remax.com.ve">gerencia@nobel.remax.com.ve</a></li>
+                        <li> <a href="https://instagram.com/remax.nobel.ve" target="_blank">remax.nobel.ve</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="pestanas">
+            <button class="activa" data-ver="inmuebles">INMUEBLES</button>
+            <button data-ver="agentes">AGENTES</button>
+        </div>
+
+        <div class="filtros" id="filtros">
+            <select id="fTipo"><option value="">Todos los tipos</option></select>
+            <select id="fOp">
+                <option value="">Venta y alquiler</option>
+                <option>Venta</option>
+                <option>Alquiler</option>
+            </select>
+        </div>
+
+        <section id="inmuebles" class="lista"></section>
+        <p id="sinResultados" hidden>No se encontraron resultados.</p>
+        <section id="agentes" class="lista" hidden></section>
+    </main>
+
+    <footer>
+        <p><strong>REMAX NOBEL TU AMIGO INMOBILIARIO</strong></p>
