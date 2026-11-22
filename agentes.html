@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentes - REMAX Nobel</title>
+    <link rel="stylesheet" href="remax.css">
+    <script src="catalogo.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="remax.html" class="logo">
+            <img src="https://cdn.remax.com.ve/api/novus/logo/inmobiliarias/37_1778798201.webp" alt="REMAX Nobel">
+        </a>
+        <input type="search" id="busqueda" placeholder="Buscar agentes...">
+        <nav>
+            <ul id="menu">
+                <li><a href="login.html#iniciar">Iniciar sesión</a></li>
+                <li><a href="login.html#crear">Crear cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="oficina">
+            <div class="oficina-logo">
+                <img src="https://cdn.remax.com.ve/api/novus/logo/inmobiliarias/37_1778798201.webp" alt="REMAX Nobel">
+            </div>
+            <div class="oficina-info">
+                <div class="oficina-titulo">
+                    <h1>REMAX Nobel</h1>
+                </div>
+                <div class="oficina-datos">
+                    <h2>Nuestro Equipo de Agentes</h2>
+                    <p>Contamos con un equipo profesional de agentes inmobiliarios listos para ayudarte a comprar, vender o alquilar tu propiedad en San Cristóbal y todo el estado Táchira.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pestañas de navegación -->
+        <div class="pestanas">
+            <a href="remax.html" class="pestana">INMUEBLES</a>
+            <a href="agentes.html" class="pestana activa">AGENTES</a>
+        </div>
+
+        <section id="agentes" class="lista"></section>
+        <p id="sinResultados" hidden>No se encontraron agentes.</p>
+    </main>
+
+    <footer>
+        <p><strong>REMAX NOBEL TU AMIGO INMOBILIARIO</strong></p>
+        <p>Calle 9 entre Carreras 21 y 22, Casa N° 21-16, Barrio Obrero, San Cristóbal, Táchira</p>
+        <p><a href="tel:+582763533794">+58-2763533794</a> - <a href="tel:+584147071434">+58-4147071434</a></p>
+        <p><a href="https://wa.me/584147071434" target="_blank">WhatsApp</a> - <a href="mailto:gerencia@nobel.remax.com.ve">gerencia@nobel.remax.com.ve</a></p>
+        <p><a href="https://instagram.com/remax.nobel.ve" target="_blank">remax.nobel.ve</a></p>
+    </footer>
+
+    <script>
+        // Dibujar solo los agentes en esta página
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof AGENTES === "undefined") return;
+
+            var html = "";
+            for (var i = 0; i < AGENTES.length; i++) {
+                var a = AGENTES[i];
+                html += "<article class='tarjeta agente'>";
+                if (a.foto) {
+                    html += "<img class='foto-agente' src='" + a.foto + "' alt='" + a.nombre + "'>";
+                }
+                html += "<span class='etiqueta'>" + a.cargo + "</span>";
+                html += "<h3>" + a.nombre + "</h3>";
+                html += "<p>Teléfono: +58-" + a.tel + "</p>";
+                html += "<p>Correo: " + a.correo + "@nobel.remax.com.ve</p>";
+                html += "<a class='enlace' target='_blank' href='https://wa.me/58" + a.tel + "'>WhatsApp</a>";
+                html += "</article>";
+            }
+            document.getElementById("agentes").innerHTML = html;
+
+            // Búsqueda simple de agentes
+            document.getElementById("busqueda").addEventListener("input", function () {
+                var texto = this.value.toLowerCase();
+                var tarjetas = document.querySelectorAll(".tarjeta.agente");
+                var visibles = 0;
+
+                tarjetas.forEach(function (t) {
+                    var mostrar = t.textContent.toLowerCase().indexOf(texto) !== -1;
+                    t.hidden = !mostrar;
+                    if (mostrar) visibles++;
+                });
+
+                document.getElementById("sinResultados").hidden = visibles > 0;
+            });
+        });
+    </script>
+</body>
+</html>

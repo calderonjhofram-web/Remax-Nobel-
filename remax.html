@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="REMAX Nobel, oficina REMAX en San Cristóbal, Táchira. Compra, venta y alquiler de propiedades.">
     <title>REMAX Nobel - San Cristóbal, Táchira</title>
     <link rel="stylesheet" href="remax.css">
+    <script src="fotos.js" defer></script>
     <script src="catalogo.js" defer></script>
     <script src="app.js" defer></script>
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo"><img src="logo.webp" alt="REMAX Nobel"></a>
+        <a href="remax.html" class="logo">
+            <img src="https://cdn.remax.com.ve/api/novus/logo/inmobiliarias/37_1778798201.webp" alt="REMAX Nobel">
+        </a>
         <input type="search" id="busqueda" placeholder="Buscar inmuebles o agentes...">
         <nav>
             <ul id="menu">
@@ -22,49 +24,239 @@
     </header>
 
     <main>
-
         <section class="oficina">
             <div class="oficina-logo">
-                <img src="logo.webp" alt="REMAX Nobel">
+                <img src="https://cdn.remax.com.ve/api/novus/logo/inmobiliarias/37_1778798201.webp" alt="REMAX Nobel">
             </div>
 
             <div class="oficina-info">
                 <div class="oficina-titulo">
                     <h1>REMAX Nobel</h1>
-                    <a href="https://www.remax.com.ve/nobel" target="_blank"></a>
                 </div>
                 <div class="oficina-datos">
-                    <p>Calle 9 entre Carreras 21 y 22, Casa N° 21-16, Sector Barrio Obrero. San Cristóbal. Estado Táchira. Venezuela.</p>
-                    <p><a href="https://www.google.com/maps/search/?api=1&query=REMAX+Nobel+Barrio+Obrero+San+Cristobal+Tachira" target="_blank">Ver mapa</a></p>
-                    <ul class="contactos">
-                        <li> <a href="tel:+582763533794">+58-2763533794</a></li>
-                        <li> <a href="tel:+584147071434">+58-4147071434</a></li>
-                        <li><a href="https://wa.me/584147071434" target="_blank">+58-4147071434</a></li>
-                        <li> <a href="mailto:gerencia@nobel.remax.com.ve">gerencia@nobel.remax.com.ve</a></li>
-                        <li> <a href="https://instagram.com/remax.nobel.ve" target="_blank">remax.nobel.ve</a></li>
-                    </ul>
+                    <h2>Quiénes Somos y Nuestra Historia</h2>
+                    <p>RE/MAX Nobel es una de las franquicias más destacadas de la red RE/MAX en Venezuela, operando como un pilar fundamental del sector inmobiliario desde el sector de Barrio Obrero, en San Cristóbal, estado Táchira. La organización forma parte de la red inmobiliaria global fundada en 1973, con presencia en más de 110 países, integrando estándares internacionales de calidad con un conocimiento profundo del mercado regional. Su labor se centra en ofrecer servicios de intermediación, asesoría, compra, venta y alquiler de inmuebles, respaldada por una gestión orientada a la seguridad jurídica, la confianza y el desarrollo comercial de la comunidad andina.</p>
                 </div>
             </div>
         </section>
 
-        <div class="pestanas">
-            <button class="activa" data-ver="inmuebles">INMUEBLES</button>
-            <button data-ver="agentes">AGENTES</button>
+        <!-- Preguntas frecuentes y mapa -->
+        <div class="faq-mapa">
+            <section class="faq">
+                <h2>Preguntas frecuentes</h2>
+
+                <h3>Inquilinos y arrendamientos</h3>
+
+                <details name="faq">
+                    <summary>¿Puedo pintar las paredes del apartamento de otro color?</summary>
+                    <p>Sí, es posible personalizar el color de las paredes. Sin embargo, al finalizar el contrato y desocupar el inmueble, tienes la obligación de entregarlo pintado exactamente en el mismo color original en el que te fue entregado.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Quién asume el costo de las reparaciones (por ejemplo, el cambio de una cerradura)?</summary>
+                    <p>Depende del origen de la falla. Si el daño fue provocado por mal uso o descuido del inquilino, este debe asumir el costo de reparación o reemplazo. Si el elemento presentaba fallas previas o desgaste por antigüedad, la responsabilidad recae sobre el propietario.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Puedo tener mascotas si el contrato de alquiler no lo prohíbe?</summary>
+                    <p>Aunque el contrato de alquiler no contemple una prohibición explícita, se debe verificar el reglamento interno del edificio o condominio. Si la administración prohíbe la tenencia de mascotas en áreas residenciales o comunes, esa norma prevalece. Se recomienda consultar con la administración antes de ingresar con una mascota.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Qué hago si se quema un bombillo o hay un fallo en las áreas comunes?</summary>
+                    <p>Todo desperfecto en pasillos, ascensores o áreas compartidas no corresponde al inquilino ni al dueño del apartamento. Debe notificarse directamente a la junta de condominio o administración del edificio para su reparación.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Con cuántos días de anticipación debo avisar que no voy a renovar el contrato?</summary>
+                    <p>El lapso debe estar especificado en el contrato. Por regla general, se exige una notificación escrita con un mínimo de 30 a 90 días de anticipación.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Cuándo y cómo se devuelve el depósito de garantía?</summary>
+                    <p>Se efectúa en un lapso de 15 a 30 días hábiles posteriores a la desocupación. Este tiempo permite verificar que la propiedad no presente daños estructurales ni deudas pendientes en los servicios públicos.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Qué sucede si se daña una tubería principal interna en el apartamento?</summary>
+                    <p>Las fallas en tuberías matrices o instalaciones internas principales son responsabilidad del propietario. El inquilino únicamente asume los gastos derivados del mantenimiento menor y uso diario.</p>
+                </details>
+
+                <h3>Propietarios y arrendadores</h3>
+
+                <details name="faq">
+                    <summary>¿Puede el propietario visitar el inmueble en cualquier momento?</summary>
+                    <p>No. El inquilino goza del derecho a la privacidad. Para realizar cualquier inspección, el propietario debe coordinar obligatoriamente la fecha y hora con anticipación.</p>
+                </details>
+
+                <h3>Compradores y ventas</h3>
+
+                <details name="faq">
+                    <summary>¿El inmueble se vende con lámparas, aires acondicionados y cortinas?</summary>
+                    <p>Únicamente si están empotrados o si se especifican detalladamente en el inventario anexo al documento de compraventa. Todo elemento movible pertenece al vendedor y se lo llevará, salvo acuerdo en contrario.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Puedo mudarme antes de firmar las escrituras definitivas?</summary>
+                    <p>No. Por seguridad jurídica, no se entregan llaves ni la posesión física hasta que el pago total esté verificado y el documento de compraventa formalmente firmado ante Registro Notarial o Público.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Qué documentos necesito para vender mi propiedad?</summary>
+                    <p>Se requiere: título de propiedad registrado, documento de identidad vigente, solvencia de impuestos municipales, ficha catastral actualizada y solvencia de pago de servicios públicos.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Qué gastos adicionales paga el comprador aparte del precio de la propiedad?</summary>
+                    <p>El comprador debe contemplar un estimado adicional de 5% a 10% del valor total de la propiedad, destinado a derechos de registro, impuestos de transmisión patrimonial, honorarios de abogados, notarías y avalúos bancarios.</p>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Cuánto tarda el proceso desde la promesa de compra hasta la entrega de llaves?</summary>
+                    <p>Toma un promedio estimado de 30 a 60 días, sujeto a si el pago es de contado o requiere aprobación y liquidación de crédito hipotecario.</p>
+                </details>
+            </section>
+
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps?q=REMAX+Nobel+Tachira+Barrio+Obrero+San+Cristobal+Tachira&amp;output=embed" title="Ubicación de REMAX Nobel" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                <a class="enlace" href="https://www.google.com/maps/dir/?api=1&amp;destination=REMAX+Nobel+Tachira+Barrio+Obrero+San+Cristobal+Tachira" target="_blank">Indicaciones</a>
+            </div>
         </div>
 
-        <div class="filtros" id="filtros">
-            <select id="fTipo"><option value="">Todos los tipos</option></select>
-            <select id="fOp">
-                <option value="">Venta y alquiler</option>
-                <option>Venta</option>
-                <option>Alquiler</option>
-            </select>
-        </div>
+        <!-- Caja de preguntas aparte -->
+        <section class="comentarios">
+            <h2>¿Tienes otra pregunta?</h2>
+            <form id="formPregunta">
+                <input id="pNombre" placeholder="Tu nombre" required>
+                <textarea id="pTexto" placeholder="Escribe tu pregunta aquí" required></textarea>
+                <button>Enviar por WhatsApp</button>
+            </form>
+        </section>
 
-        <section id="inmuebles" class="lista"></section>
-        <p id="sinResultados" hidden>No se encontraron resultados.</p>
-        <section id="agentes" class="lista" hidden></section>
+        <!-- Aviso para quien no ha iniciado sesión -->
+        <section class="aviso" id="aviso">
+            <h2>Inicia sesión para ver los inmuebles</h2>
+            <p>Crea tu cuenta o inicia sesión para ver el catálogo completo de inmuebles y a nuestros agentes.</p>
+            <a class="enlace" href="login.html#iniciar">Iniciar sesión</a>
+            <a class="enlace" href="login.html#crear">Crear cuenta</a>
+        </section>
+
+        <!-- Catálogo: solo se muestra con sesión iniciada -->
+        <div id="catalogo" hidden>
+
+            <!-- Pestañas -->
+            <div class="pestanas">
+                <button class="activa" data-ver="inmuebles">INMUEBLES</button>
+                <button data-ver="agentes">AGENTES</button>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtros" id="filtros">
+                <select id="fTipo">
+                    <option value="">Todos los tipos</option>
+                </select>
+                <select id="fOp">
+                    <option value="">Venta y alquiler</option>
+                    <option>Venta</option>
+                    <option>Alquiler</option>
+                </select>
+            </div>
+
+            <!-- Inmuebles -->
+            <section id="inmuebles" class="lista"></section>
+            <p id="sinResultados" hidden>No se encontraron resultados.</p>
+
+            <!-- Agentes -->
+            <section id="agentes" class="lista" hidden></section>
+
+        </div>
     </main>
 
     <footer>
         <p><strong>REMAX NOBEL TU AMIGO INMOBILIARIO</strong></p>
+        <p>Calle 9 entre Carreras 21 y 22, Casa N° 21-16, Barrio Obrero, San Cristóbal, Táchira</p>
+
+        <ul class="iconos-contacto">
+            <li>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <a href="tel:+582763533794">+58-2763533794</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                <a href="tel:+584147071434">+58-4147071434</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                <a href="https://wa.me/584147071434" target="_blank">+58-4147071434</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=gerencia@nobel.remax.com.ve" target="_blank">gerencia@nobel.remax.com.ve</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                <a href="https://instagram.com/remax.nobel.ve" target="_blank">remax.nobel.ve</a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Script de agentes (para que funcionen aunque catalogo.js falle) -->
+    <script>
+        var AGENTES_EXTRA = [
+            {nombre: "Leyddi Dayana Vivas Torres", tel: "4147008030", correo: "leyddivivas", cargo: "Bróker", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/broker/610_1741697156.jpeg"},
+            {nombre: "Aida Barjas Al Khatib", tel: "4265754775", correo: "aidabarjas", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/8483_1789068489.webp"},
+            {nombre: "Christian José Rincón Villamizar", tel: "4120630976", correo: "jose.rincon", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/9230_1760994520.jpeg"},
+            {nombre: "Erika Vanessa Verdi Quemba", tel: "4147225029", correo: "erikaverdi", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/2139_1788360468.webp"},
+            {nombre: "Giuliana Carrero", tel: "4247341290", correo: "giulianacarrero", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/8547_1760995056.jpeg"},
+            {nombre: "Jacqueline Alvarado Garcia", tel: "4147058784", correo: "jacquelinealvarado", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/916_1761769434.jpeg"},
+            {nombre: "Jaiberth Alberto Zambrano Colmenares", tel: "4147315611", correo: "jaiberthzambrano", cargo: "Agente", foto: "https://www.remax.com.ve/build/images/placeholder_agente_listado.242695c9.jpeg"},
+            {nombre: "Lennys Lissett Castillo Conde", tel: "4147520075", correo: "lennys.castillo", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/9540_1788360799.webp"},
+            {nombre: "Licel Morales", tel: "4147076927", correo: "licelmorales", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/8525_1761770637.jpeg"},
+            {nombre: "Maria Espitia", tel: "4247545580", correo: "mariaespitia", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/8620_1761857586.jpeg"},
+            {nombre: "Maria Yacqueline Gonzalez Nieto", tel: "4247008815", correo: "yacquelinegonzalez", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/2143_1760992060.jpeg"},
+            {nombre: "Marisela Esther Luna Romero", tel: "4147103054", correo: "mariselaluna", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/8463_1761246463.jpeg"},
+            {nombre: "Miguel Suarez", tel: "4120780439", correo: "miguelsuarez", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/9124_1788361633.webp"},
+            {nombre: "Neyra Josefa Barrera Cardozo", tel: "4247047896", correo: "neyra.barrera", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/9945_1788361085.webp"},
+            {nombre: "Nicolina Ontiveros De Noguera", tel: "4247079299", correo: "nicolina.ontiveros", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/9229_1760996288.jpeg"},
+            {nombre: "Okayrelis Chichinquira Grimaldo Gonzalez", tel: "4121137186", correo: "okayrelis.gonzalez", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/9474_1788361241.webp"},
+            {nombre: "Rossemelhy Karina Moncada Marquez", tel: "4127990568", correo: "rossemelhymoncada", cargo: "Agente", foto: "https://www.remax.com.ve/build/images/placeholder_agente_listado.242695c9.jpeg"},
+            {nombre: "Swander Javier Vergara Montoya", tel: "4147315611", correo: "swandervergara", cargo: "Agente", foto: "https://www.remax.com.ve/build/images/placeholder_agente_listado.242695c9.jpeg"},
+            {nombre: "Víctor Ramón Mendoza Maldonado", tel: "4147044523", correo: "victormendoza", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/752_1723817259.png"},
+            {nombre: "Yelka Stefanni Rojas Lizcano", tel: "4121720940", correo: "YelkaRojas", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/7726_1723817318.png"},
+            {nombre: "Yesenia Carolina Soto Bohorquez", tel: "4227001757", correo: "yeseniasoto", cargo: "Agente", foto: "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/asesores/10940_1788361380.webp"}
+        ];
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Si catalogo.js no dibujó los agentes, los dibujamos nosotros
+            setTimeout(function () {
+                var seccion = document.getElementById("agentes");
+                if (seccion && seccion.children.length === 0) {
+                    var html = "";
+                    for (var i = 0; i < AGENTES_EXTRA.length; i++) {
+                        var a = AGENTES_EXTRA[i];
+                        html += '<article class="tarjeta agente">';
+                        if (a.foto) {
+                            html += '<img class="foto-agente" src="' + a.foto + '" alt="' + a.nombre + '">';
+                        }
+                        html += '<span class="etiqueta">' + a.cargo + '</span>';
+                        html += '<h3>' + a.nombre + '</h3>';
+                        html += '<p>Teléfono: +58-' + a.tel + '</p>';
+                        html += '<p>Correo: ' + a.correo + '@nobel.remax.com.ve</p>';
+                        html += '<a class="enlace" target="_blank" href="https://wa.me/58' + a.tel + '">WhatsApp</a>';
+                        html += '</article>';
+                    }
+                    seccion.innerHTML = html;
+                }
+            }, 300);
+        });
+    </script>
+
+    <div id="galeria" hidden>
+        <button id="gCerrar">&times;</button>
+        <button id="gAnterior">&lsaquo;</button>
+        <img id="gImagen" alt="">
+        <button id="gSiguiente">&rsaquo;</button>
+        <p id="gContador"></p>
+    </div>
+</body>
+</html>

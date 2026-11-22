@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="remax.html" class="logo"><img src="logo.webp" alt="REMAX Nobel"></a>
+        <a href="remax.html" class="logo"><img src="https://cdn.remax.com.ve/api/novus/logo/inmobiliarias/37_1778798201.webp" alt="REMAX Nobel"></a>
         <nav>
             <ul>
                 <li><a href="#iniciar">Iniciar sesión</a></li>
@@ -22,29 +22,40 @@
         <div class="cajas">
             <form class="caja" id="login">
                 <h2 id="iniciar">Iniciar sesión</h2>
-                <input name="cedula" placeholder="Cédula" required>
-                <input name="correo" type="email" placeholder="Correo electrónico" required>
+                <input id="loginCedula" placeholder="Cédula" required>
+                <input id="loginCorreo" type="email" placeholder="Correo electrónico" required>
                 <button>Entrar</button>
+
+                <p class="enlaces-form">
+                    <a href="https://wa.me/584147071434?text=Hola%2C%20olvid%C3%A9%20mis%20datos%20de%20acceso" target="_blank">¿Olvidaste tu contraseña?</a>
+                    <a href="#crear">¿No tienes una cuenta? Regístrate</a>
+                </p>
             </form>
 
-            <form class="caja" id="registro">
+            <form class="caja" id="registro" hidden>
                 <h2 id="crear">Crear cuenta</h2>
-                <input name="cedula" placeholder="Cédula" required>
-                <input name="nombre" placeholder="Nombre" required>
-                <input name="apellido" placeholder="Apellido" required>
-                <input name="correo" type="email" placeholder="Correo electrónico" required>
+                <input id="regCedula" placeholder="Cédula" required>
+                <input id="regNombre" placeholder="Nombre" required>
+                <input id="regApellido" placeholder="Apellido" required>
+                <input id="regCorreo" type="email" placeholder="Correo electrónico" required>
+                <input id="regTelefono" placeholder="Teléfono" required>
                 <button>Registrarme</button>
+
+                <p class="enlaces-form">
+                    <a href="#iniciar">¿Ya tienes una cuenta? Inicia sesión</a>
+                </p>
             </form>
         </div>
         <p id="mensaje"></p>
     </main>
 
     <footer>
-        <p><strong>Contactanos</strong></p>
-        <p> Calle 9 entre Carreras 21 y 22, Casa N° 21-16, Barrio Obrero, San Cristóbal, Táchira</p>
-        <p></p> <a href="tel:+582763533794">+58-2763533794</a> ·  <a href="tel:+584147071434">+58-4147071434</a></p>
-        <p><a href="https://wa.me/584147071434" target="_blank">WhatsApp</a> · <a href="mailto:gerencia@nobel.remax.com.ve">gerencia@nobel.remax.com.ve</a></p>
-        <p> <a href="https://instagram.com/remax.nobel.ve" target="_blank">remax.nobel.ve</a></p>
+        <p><strong>REMAX NOBEL TU AMIGO INMOBILIARIO</strong></p>
+        <p>Calle 9 entre Carreras 21 y 22, Casa N° 21-16, Barrio Obrero, San Cristóbal, Táchira</p>
+        <p><a href="tel:+582763533794">+58-2763533794</a> - <a href="tel:+584147071434">+58-4147071434</a></p>
+        <p><a href="https://wa.me/584147071434" target="_blank">WhatsApp</a> - 
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=gerencia@nobel.remax.com.ve" target="_blank">gerencia@nobel.remax.com.ve</a></p>
+        <p><a href="https://instagram.com/remax.nobel.ve" target="_blank">remax.nobel.ve</a></p>
     </footer>
 </body>
 </html>
