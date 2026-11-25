@@ -81,10 +81,12 @@ if (formRegistro != null) {
         var nombre = document.getElementById("regNombre").value;
         var apellido = document.getElementById("regApellido").value;
         var correo = document.getElementById("regCorreo").value;
-                if (!document.getElementById("regAcepto").checked) {
-                    mostrarMensaje("Debes aceptar la política de privacidad y los términos.");
-                    return;
-                }
+        var telefono = document.getElementById("regTelefono").value;
+
+        if (!document.getElementById("regAcepto").checked) {
+            mostrarMensaje("Debes aceptar la política de privacidad y los términos.");
+            return;
+        }
 
         if (buscarUsuario(cedula) != null) {
             mostrarMensaje("Esa cédula ya está registrada.");
@@ -132,15 +134,10 @@ if (formLogin != null) {
 
 var catalogo = document.getElementById("catalogo");
 var aviso = document.getElementById("aviso");
-var buscador = document.getElementById("busqueda");
 
-if (catalogo != null) {
-    if (usuarioActual != null) {
-        catalogo.hidden = false;
-        aviso.hidden = true;
-    } else {
-        buscador.hidden = true;
-    }
+if (catalogo != null && usuarioActual != null) {
+    catalogo.hidden = false;
+    aviso.hidden = true;
 }
 
 var formPregunta = document.getElementById("formPregunta");
