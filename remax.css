@@ -1,6 +1,3 @@
-El archivo que compartiste es CSS, no HTML. Aquí está completo, sin el estilo de la barra de búsqueda y con la galería oculta al entrar (`#galeria { display: none; }`):
-
-```css
 * {
     margin: 0;
     padding: 0;
@@ -39,6 +36,15 @@ header {
 
 .logo img {
     height: 60px;
+}
+
+#busqueda {
+    flex: 1;
+    max-width: 400px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
 }
 
 nav ul {
@@ -205,7 +211,7 @@ main {
 .sin-foto {
     height: 160px;
     background-color: #dddddd;
-    color: #777777;
+    color: #555555;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -448,11 +454,9 @@ footer a {
     cursor: pointer;
     transition: opacity 0.2s;
 }
-
 .foto:hover {
     opacity: 0.9;
 }
-
 .num-fotos {
     color: #003da5;
     font-weight: bold;
@@ -466,17 +470,14 @@ footer a {
     align-items: center;
     justify-content: center;
 }
-
 #galeriaModal.abierta {
     display: flex;
 }
-
 .galeria-fondo {
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.88);
 }
-
 .galeria-contenido {
     position: relative;
     max-width: 92vw;
@@ -485,7 +486,6 @@ footer a {
     align-items: center;
     justify-content: center;
 }
-
 #galeriaImg {
     max-width: 88vw;
     max-height: 82vh;
@@ -493,7 +493,6 @@ footer a {
     border-radius: 6px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
-
 .galeria-cerrar {
     position: absolute;
     top: -42px;
@@ -505,7 +504,6 @@ footer a {
     cursor: pointer;
     line-height: 1;
 }
-
 .galeria-prev, .galeria-next {
     position: absolute;
     top: 50%;
@@ -522,14 +520,11 @@ footer a {
     align-items: center;
     justify-content: center;
 }
-
 .galeria-prev { left: -60px; }
 .galeria-next { right: -60px; }
-
 .galeria-prev:hover, .galeria-next:hover {
     background: #dc1c2e;
 }
-
 .galeria-contador {
     position: absolute;
     bottom: -36px;
@@ -569,7 +564,7 @@ footer a {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
@@ -751,4 +746,136 @@ footer a {
 .mapa .enlace {
     display: inline-block;
     margin-top: 12px;
+}
+:focus-visible {
+    outline: 3px solid #f5a623;
+    outline-offset: 2px;
+}
+
+#bannerCookies {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 2000;
+    background-color: #ffffff;
+    color: #333333;
+    border: 2px solid #003da5;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+#bannerCookies a {
+    color: #003da5;
+}
+
+#bannerCookies div {
+    display: flex;
+    gap: 8px;
+}
+
+#bannerCookies button {
+    padding: 10px 20px;
+    border: 2px solid #003da5;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#rechazarCookies {
+    background-color: #ffffff;
+    color: #003da5;
+}
+
+#aceptarCookies {
+    background-color: #003da5;
+    color: #ffffff;
+}
+
+.mapa-aviso {
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    padding: 24px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.enlaces-legales {
+    margin-top: 8px;
+}
+
+.acepto {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.acepto input {
+    width: auto;
+    margin-top: 3px;
+}
+
+.acepto a {
+    color: #003da5;
+}
+
+.legal {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.legal h1 {
+    color: #003da5;
+    margin-bottom: 8px;
+}
+
+.legal h2 {
+    color: #003da5;
+    margin: 32px 0 8px 0;
+    padding-bottom: 6px;
+    border-bottom: 3px solid #dc1c2e;
+}
+
+.legal h3 {
+    color: #dc1c2e;
+    margin: 20px 0 6px 0;
+}
+
+.legal p {
+    margin-bottom: 8px;
+}
+
+.legal ul {
+    margin: 0 0 8px 24px;
+}
+
+.legal .enlace {
+    margin-top: 8px;
+}
+
+.actualizado {
+    color: #555555;
+}
+
+.aviso-legal {
+    background-color: #fff6e5;
+    border-left: 6px solid #f5a623;
+    padding: 12px 16px;
+    margin: 16px 0;
 }

@@ -82,9 +82,6 @@ function dibujarCatalogo() {
         if (x.foto) {
             fotos.unshift(x.foto);
         }
-        if (fotos.length == 0) {
-            continue;
-        }
 
         if (x.precio > 0) {
             precio = "USD $" + x.precio.toLocaleString("es-VE");
@@ -97,15 +94,12 @@ function dibujarCatalogo() {
         htmlInmuebles = htmlInmuebles + "<article class='tarjeta' data-tipo='" + x.tipo + "' data-op='" + x.op + "'>";
 
         if (fotos.length > 0) {
-            htmlInmuebles = htmlInmuebles + "<div class='portada' data-pos='" + i + "'>";
-            htmlInmuebles = htmlInmuebles + "<img class='foto' loading='lazy' src='" + fotos[0] + "' alt=''>";
+            htmlInmuebles = htmlInmuebles + "<div class='portada' role='button' tabindex='0' aria-label='Ver las fotos de " + limpiar(x.titulo) + "' data-pos='" + i + "'>";
+            htmlInmuebles = htmlInmuebles + "<img class='foto' loading='lazy' src='" + fotos[0] + "' alt='" + limpiar(x.titulo) + "'>";
             htmlInmuebles = htmlInmuebles + "<span class='cantidad'>" + fotos.length + " fotos</span>";
             htmlInmuebles = htmlInmuebles + "</div>";
         }
 
-        if (fotos.length == 0) {
-            htmlInmuebles = htmlInmuebles + "<div class='sin-foto'>Sin foto</div>";
-        }
         htmlInmuebles = htmlInmuebles + "<span class='etiqueta " + x.op.toLowerCase() + "'>" + x.op + "</span>";
         htmlInmuebles = htmlInmuebles + "<h3>" + limpiar(x.titulo) + "</h3>";
         htmlInmuebles = htmlInmuebles + "<p class='precio'>" + precio + "</p>";
@@ -133,7 +127,7 @@ function dibujarCatalogo() {
         var a = AGENTES[j];
 
         htmlAgentes = htmlAgentes + "<article class='tarjeta agente'>";
-        htmlAgentes = htmlAgentes + "<img class='foto-agente' loading='lazy' src='" + a.foto + "' alt=''>";
+        htmlAgentes = htmlAgentes + "<img class='foto-agente' loading='lazy' src='" + a.foto + "' alt='Foto de " + limpiar(a.nombre) + "'>";
         htmlAgentes = htmlAgentes + "<span class='etiqueta'>" + a.cargo + "</span>";
         htmlAgentes = htmlAgentes + "<h3>" + a.nombre + "</h3>";
         htmlAgentes = htmlAgentes + "<p>Teléfono: +58-" + a.tel + "</p>";
@@ -158,27 +152,25 @@ function dibujarCatalogo() {
 }
 
 function filtrar() {
-    var texto = document.getElementById("busqueda").value.toLowerCase();
     var tipo = document.getElementById("fTipo").value;
     var op = document.getElementById("fOp").value;
-    var tarjetas = document.querySelectorAll(".tarjeta");
+    var tarjetas = document.querySelectorAll("#inmuebles .tarjeta");
     var visibles = 0;
 
     for (var i = 0; i < tarjetas.length; i++) {
         var tarjeta = tarjetas[i];
-        var esAgente = tarjeta.classList.contains("agente");
-        var mostrar = tarjeta.textContent.toLowerCase().indexOf(texto) != -1;
+        var mostrar = true;
 
-        if (esAgente == false) {
-            if (tipo != "" && tarjeta.getAttribute("data-tipo") != tipo) {
-                mostrar = false;
-            }
-            if (op != "" && tarjeta.getAttribute("data-op") != op) {
-                mostrar = false;
-            }
-            if (mostrar) {
-                visibles = visibles + 1;
-            }
+        if (tipo != "" && tarjeta.getAttribute("data-tipo") != tipo) {
+            mostrar = false;
+        }
+
+        if (op != "" && tarjeta.getAttribute("data-op") != op) {
+            mostrar = false;
+        }
+
+        if (mostrar) {
+            visibles = visibles + 1;
         }
 
         tarjeta.hidden = !mostrar;
@@ -205,25 +197,8 @@ function cambiarPestana() {
 if (document.getElementById("inmuebles") != null) {
     dibujarCatalogo();
 
-    document.getElementById("busqueda").addEventListener("input", filtrar);
     document.getElementById("fTipo").addEventListener("input", filtrar);
     document.getElementById("fOp").addEventListener("input", filtrar);
-
-    document.getElementById("busqueda").addEventListener("keydown", function (evento) {
-        if (evento.key == "Enter") {
-            evento.preventDefault();
-            filtrar();
-
-            var inmueblesVisibles = document.querySelectorAll("#inmuebles .tarjeta:not([hidden])").length;
-            var agentesVisibles = document.querySelectorAll("#agentes .tarjeta:not([hidden])").length;
-
-            if (inmueblesVisibles == 0 && agentesVisibles > 0) {
-                document.querySelector("[data-ver='agentes']").click();
-            }
-
-            document.getElementById("inmuebles").scrollIntoView();
-        }
-    });
 
     var botonesPestanas = document.querySelectorAll(".pestanas button");
 
@@ -234,9 +209,11 @@ if (document.getElementById("inmuebles") != null) {
 
 var fotosGaleria = [];
 var posicionGaleria = 0;
+var elementoAnterior = null;
 
 function mostrarFoto() {
     document.getElementById("gImagen").src = fotosGaleria[posicionGaleria];
+    document.getElementById("gImagen").alt = "Foto " + (posicionGaleria + 1) + " de " + fotosGaleria.length;
     document.getElementById("gContador").textContent = (posicionGaleria + 1) + " / " + fotosGaleria.length;
 }
 
@@ -251,10 +228,15 @@ function abrirGaleria(pos) {
     posicionGaleria = 0;
     mostrarFoto();
     document.getElementById("galeria").hidden = false;
+    document.getElementById("gCerrar").focus();
 }
 
 function cerrarGaleria() {
     document.getElementById("galeria").hidden = true;
+
+    if (elementoAnterior != null) {
+        elementoAnterior.focus();
+    }
 }
 
 function siguienteFoto() {
@@ -282,6 +264,7 @@ if (document.getElementById("galeria") != null) {
         var portada = evento.target.closest(".portada");
 
         if (portada != null) {
+            elementoAnterior = portada;
             abrirGaleria(Number(portada.getAttribute("data-pos")));
         }
     });
@@ -297,6 +280,14 @@ if (document.getElementById("galeria") != null) {
     });
 
     document.addEventListener("keydown", function (evento) {
+        var enPortada = evento.target.classList && evento.target.classList.contains("portada");
+
+        if (enPortada && (evento.key == "Enter" || evento.key == " ")) {
+            evento.preventDefault();
+            evento.target.click();
+            return;
+        }
+
         if (document.getElementById("galeria").hidden) {
             return;
         }
@@ -311,6 +302,32 @@ if (document.getElementById("galeria") != null) {
 
         if (evento.key == "ArrowLeft") {
             anteriorFoto();
+        }
+
+        if (evento.key == "Tab") {
+            var botones = [
+                document.getElementById("gCerrar"),
+                document.getElementById("gAnterior"),
+                document.getElementById("gSiguiente")
+            ];
+            var posicion = botones.indexOf(document.activeElement);
+
+            if (evento.shiftKey) {
+                posicion = posicion - 1;
+
+                if (posicion < 0) {
+                    posicion = botones.length - 1;
+                }
+            } else {
+                posicion = posicion + 1;
+
+                if (posicion >= botones.length) {
+                    posicion = 0;
+                }
+            }
+
+            evento.preventDefault();
+            botones[posicion].focus();
         }
     });
 }

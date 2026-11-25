@@ -81,7 +81,10 @@ if (formRegistro != null) {
         var nombre = document.getElementById("regNombre").value;
         var apellido = document.getElementById("regApellido").value;
         var correo = document.getElementById("regCorreo").value;
-        var telefono = document.getElementById("regTelefono").value;
+                if (!document.getElementById("regAcepto").checked) {
+                    mostrarMensaje("Debes aceptar la política de privacidad y los términos.");
+                    return;
+                }
 
         if (buscarUsuario(cedula) != null) {
             mostrarMensaje("Esa cédula ya está registrada.");
