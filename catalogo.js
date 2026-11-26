@@ -1,32 +1,3 @@
-var BASE = [
-    {cod: 325900, titulo: "Casa en Altos de Paramillo, Palogordo", tipo: "Casa", op: "Venta", precio: 80000, zona: "Altos de Paramillo", m2: 250, terreno: 143, foto: ""},
-    {cod: 332611, titulo: "Casa en El Junco, sector La Esperanza", tipo: "Casa", op: "Venta", precio: 15000, zona: "Barrio La Esperanza", m2: 49, terreno: 49, foto: ""},
-    {cod: 332615, titulo: "Terreno en El Junco Páramo", tipo: "Terreno", op: "Venta", precio: 11000, zona: "Barrio La Esperanza", m2: null, terreno: 175, foto: ""},
-    {cod: 326141, titulo: "Casa en proyecto Urb. Villa Camila", tipo: "Casa", op: "Venta", precio: 50000, zona: "Boca de Caneyes", m2: 136, terreno: 136, foto: ""},
-    {cod: 329952, titulo: "Casa en Colón, Barrio Urdaneta", tipo: "Casa", op: "Venta", precio: 39000, zona: "Colón", m2: 270, terreno: 270, foto: ""},
-    {cod: 329944, titulo: "Casa y terreno en Monte Carmelo", tipo: "Casa", op: "Venta", precio: 45000, zona: "Cordero", m2: 80, terreno: 15000, foto: ""},
-    {cod: 330268, titulo: "Casa con terreno en La Ahuyamala", tipo: "Casa", op: "Venta", precio: 69000, zona: "Cordero", m2: 8763, terreno: 8763, foto: ""},
-    {cod: 331988, titulo: "Casa en Sabana Larga", tipo: "Casa", op: "Venta", precio: 35000, zona: "Cordero", m2: 276, terreno: 276, foto: ""},
-    {cod: 331996, titulo: "Casa en La Ahuyamala", tipo: "Casa", op: "Venta", precio: 24000, zona: "Cordero", m2: 276, terreno: 276, foto: ""},
-    {cod: 332256, titulo: "Casa en el sector Salomón", tipo: "Casa", op: "Venta", precio: 16000, zona: "Cordero", m2: 240, terreno: 240, foto: ""},
-    {cod: 331415, titulo: "Casa en Santa Eduviges", tipo: "Casa", op: "Venta", precio: 19000, zona: "El Diamante", m2: 100, terreno: 100, foto: ""},
-    {cod: 331420, titulo: "Local en el C.C. Mercado Metropolitano", tipo: "Local", op: "Venta", precio: 170000, zona: "La Concordia, San Cristóbal", m2: 194, terreno: 194, foto: ""},
-    {cod: 332254, titulo: "Galpón y terreno en Potrero de las Casas", tipo: "Galpón", op: "Venta", precio: 45000, zona: "Lobatera", m2: 500, terreno: 13400, foto: ""},
-    {cod: 330916, titulo: "Terreno con avances de construcción", tipo: "Terreno", op: "Venta", precio: 16000, zona: "Palmira", m2: null, terreno: 105, foto: ""},
-    {cod: 328889, titulo: "Apartamento piso 9, Res. La Hacienda", tipo: "Apartamento", op: "Alquiler", precio: 330, zona: "San Cristóbal, Av. 19 de Abril", m2: 85, terreno: null, foto: ""},
-    {cod: 332252, titulo: "Apartamento en Res. Alcázar", tipo: "Apartamento", op: "Venta", precio: 115000, zona: "San Cristóbal", m2: 90, terreno: null, foto: ""},
-    {cod: 327250, titulo: "Casa en Urb. Bermeja Sur", tipo: "Casa", op: "Venta", precio: 180000, zona: "San Cristóbal, Urb. Sucre", m2: 475, terreno: 475, foto: ""},
-    {cod: 330915, titulo: "Casa en Barrio Obrero", tipo: "Casa", op: "Venta", precio: 650000, zona: "San Cristóbal, Barrio Obrero", m2: 1415, terreno: 1415, foto: ""},
-    {cod: 317839, titulo: "Edificio con locales comerciales", tipo: "Edificio", op: "Venta", precio: 850000, zona: "San Cristóbal, Barrio Lourdes", m2: 296, terreno: 296, foto: ""},
-    {cod: 330207, titulo: "Hotel y tasca, Plaza Venezuela", tipo: "Hotel", op: "Venta", precio: 155000, zona: "San Cristóbal", m2: 544, terreno: 272, foto: ""},
-    {cod: 328865, titulo: "Local comercial de 20 m2", tipo: "Local", op: "Alquiler", precio: 87, zona: "San Cristóbal", m2: 20, terreno: 20, foto: ""},
-    {cod: 328872, titulo: "Local comercial de 40 m2", tipo: "Local", op: "Alquiler", precio: 175, zona: "San Cristóbal", m2: 40, terreno: 40, foto: ""},
-    {cod: 329025, titulo: "Terreno en Helechales, Palo Gordo", tipo: "Terreno", op: "Venta", precio: 6800, zona: "San Cristóbal", m2: null, terreno: 413, foto: ""},
-    {cod: 315766, titulo: "Apartamento Los Naranjos, Pueblo Nuevo", tipo: "Apartamento", op: "Alquiler", precio: 400, zona: "San Juan Bautista", m2: 92, terreno: null, foto: ""},
-    {cod: 326135, titulo: "Casa en construcción, Polígono de Tiro", tipo: "Casa", op: "Venta", precio: 50000, zona: "San Juan Bautista", m2: 85, terreno: 85, foto: ""},
-    {cod: 329955, titulo: "Terreno en San Juan de Colón", tipo: "Terreno", op: "Venta", precio: 8000, zona: "San Juan de Colón", m2: null, terreno: 600, foto: ""}
-];
-
 var PLACEHOLDER = "https://www.remax.com.ve/build/images/placeholder_agente_listado.242695c9.jpeg";
 var PERFIL = "https://cdn.remax.com.ve/api/novus/perfil/inmobiliarias/";
 
@@ -54,7 +25,7 @@ var AGENTES = [
     {nombre: "Yesenia Carolina Soto Bohorquez", tel: "4227001757", correo: "yeseniasoto", cargo: "Agente", foto: PERFIL + "asesores/10940_1788361380.webp"}
 ];
 
-var INMUEBLES = NUEVOS.concat(BASE);
+var INMUEBLES = NUEVOS;
 var inmueblesGuardados = localStorage.getItem("inmuebles");
 
 if (inmueblesGuardados != null) {
@@ -98,6 +69,8 @@ function dibujarCatalogo() {
             htmlInmuebles = htmlInmuebles + "<img class='foto' loading='lazy' src='" + fotos[0] + "' alt='" + limpiar(x.titulo) + "'>";
             htmlInmuebles = htmlInmuebles + "<span class='cantidad'>" + fotos.length + " fotos</span>";
             htmlInmuebles = htmlInmuebles + "</div>";
+        } else {
+            htmlInmuebles = htmlInmuebles + "<div class='sin-foto'>Sin foto</div>";
         }
 
         htmlInmuebles = htmlInmuebles + "<span class='etiqueta " + x.op.toLowerCase() + "'>" + x.op + "</span>";
